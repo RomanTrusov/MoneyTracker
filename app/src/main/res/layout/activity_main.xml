@@ -7,56 +7,53 @@
     tools:context="com.loftschool.moneytracker.MainActivity">
 
 
-
-
     <LinearLayout
-
-        android:padding="@dimen/padding_name"
-        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_name">
 
 
         <EditText
             android:id="@+id/name"
-            android:inputType="text"
-            android:hint="@string/name_string"
-            android:layout_weight="1"
-            android:maxLines="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/name_string"
+            android:inputType="text"
+            android:maxLines="1" />
 
         <EditText
             android:id="@+id/money"
-            android:inputType="number"
+            android:layout_width="@dimen/money_dim"
+            android:layout_height="wrap_content"
             android:gravity="end"
             android:hint="@string/money_string"
-            android:maxLines="1"
-            android:layout_width="@dimen/money_dim"
-            android:layout_height="wrap_content" />
+            android:inputType="number"
+            android:maxLines="1" />
 
         <ImageButton
-            android:contentDescription="@string/add_to_base_string"
             android:id="@+id/add"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_add_black_24dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/add_to_base_string"
+            android:src="@drawable/ic_add_black_24dp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="79dp">
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:alpha="0.5"
-            android:paddingVertical="80sp"
-            android:src="@drawable/shadow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/shadow" />
     </LinearLayout>
-
 
 
 </FrameLayout>
