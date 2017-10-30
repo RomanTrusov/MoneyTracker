@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged( CharSequence s, int start, int before, int count) {
                 nameEntered = !TextUtils.isEmpty(s); //Если во время ввода текста в строке что-то есть, то nameEntered = true
-                addButton.setEnabled(moneyEntered&&nameEntered); //кнопка активна, если обе переменные true
-        }
+                addButton.setEnabled(moneyEntered && nameEntered); //кнопка активна, если обе переменные true
+                if (moneyEntered&&nameEntered) {addButton.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //Цвет кнопки яркий, когда активна
+                else {addButton.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));} //Тусклый, когда не активна
+            }
 
             @Override
             public void afterTextChanged(Editable s) {}
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 moneyEntered = !TextUtils.isEmpty(s); //Если во время ввода текста в строке что-то есть, то moneyEntered = true
                 addButton.setEnabled(moneyEntered&&nameEntered); //кнопка активна, если обе переменные true
+                if (moneyEntered&&nameEntered) {addButton.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //ЦВет кнопки яркий когда активна
+                else {addButton.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));} //Тусклый, когда не активна
             }
 
             @Override
