@@ -10,6 +10,14 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    protected boolean checkButton(boolean b1, boolean b2, ImageButton add, CharSequence s) { //Метод для пределения доступности кнопки
+        boolean b3 = !TextUtils.isEmpty(s);
+        add.setEnabled(b1 && b2);
+        if (b1&&b2) {add.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));}
+        else {add.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));}
+        return b3;
+    }
+
     public boolean nameEntered = false, moneyEntered = false; //Вводим две переменные для проверки наличия текста в каждом окне
 
     @Override
@@ -22,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
         addButton.setEnabled(false); //Делаем кнопку неактивной здесь, потому что ImageButton не деактивируется через xml (только через android:clickable)
 
 
+
         titleEdit.addTextChangedListener(new TextWatcher() { //Отслеживание текста в поле nameEdit
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged( CharSequence s, int start, int before, int count) {
-                nameEntered = !TextUtils.isEmpty(s); //Если во время ввода текста в строке что-то есть, то nameEntered = true
-                addButton.setEnabled(moneyEntered && nameEntered); //кнопка активна, если обе переменные true
-                if (moneyEntered&&nameEntered) {addButton.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //Цвет кнопки яркий, когда активна
-                else {addButton.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));} //Тусклый, когда не активна
+                nameEntered = checkButton(nameEntered, moneyEntered, addButton, s);
             }
 
             @Override
@@ -44,10 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                moneyEntered = !TextUtils.isEmpty(s); //Если во время ввода текста в строке что-то есть, то moneyEntered = true
-                addButton.setEnabled(moneyEntered&&nameEntered); //кнопка активна, если обе переменные true
-                if (moneyEntered&&nameEntered) {addButton.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //ЦВет кнопки яркий когда активна
-                else {addButton.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));} //Тусклый, когда не активна
+                moneyEntered = checkButton(nameEntered, moneyEntered, addButton, s);
             }
 
             @Override
