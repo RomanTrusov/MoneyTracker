@@ -2,5 +2,8 @@
 
 <resources>
     <dimen name="text_size">18sp</dimen>
+    <dimen name="money_dim">60dp</dimen>
+    <dimen name="addButton_alpha">1</dimen>
+    <dimen name="padding_name">16dp</dimen>
 
 </resources>
