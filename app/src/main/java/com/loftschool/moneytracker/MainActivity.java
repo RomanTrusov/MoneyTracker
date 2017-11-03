@@ -10,13 +10,15 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected void activeButton(boolean b1, boolean b2, ImageButton add) { //Метод для определения активности кнопки
-        add.setEnabled(b1 && b2); //Задать активность кнопки (1\0)
-        if (b1&&b2) {add.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //Яркая если активна
+    public boolean nameEntered = false, moneyEntered = false; //Вводим две переменные для проверки наличия текста в каждом окне
+
+    protected void activeButton(ImageButton add) { //Метод для определения активности кнопки
+        add.setEnabled(nameEntered && moneyEntered); //Задать активность кнопки (1\0)
+        if (nameEntered&moneyEntered) {add.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));} //Яркая если активна
         else {add.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));} //Тусклая если не активна
     }
 
-    public boolean nameEntered = false, moneyEntered = false; //Вводим две переменные для проверки наличия текста в каждом окне
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged( CharSequence s, int start, int before, int count) {
                 nameEntered = !TextUtils.isEmpty(s); //nameEntered = true если что-то введено в текст
-                activeButton(nameEntered, moneyEntered, addButton); //Обработка метода определения активности кнопки
+                activeButton(addButton); //Обработка метода определения активности кнопки
             }
 
             @Override
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 moneyEntered = !TextUtils.isEmpty(s);//moneyEntered = true если что-то введено в числа
-                activeButton(nameEntered, moneyEntered, addButton); //Обработка метода определения активности кнопки
+                activeButton(addButton); //Обработка метода определения активности кнопки
             }
 
             @Override
