@@ -14,5 +14,6 @@ public class ItemActivity extends AppCompatActivity { //наследуется �
 
         RecyclerView recycler = findViewById(R.id.recycler); //использовать RecyclerView по айди из xml файла
         recycler.setLayoutManager(new LinearLayoutManager(this)); // Задать LayoutManager
+        recycler.setAdapter(new ItemAdapter()); //Использовать созданный адаптер
     }
 }
