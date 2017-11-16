@@ -23,7 +23,7 @@
     
     <TextView
         style="@style/itemText"
-        tools:text="35 rub"
+        tools:text="&#8381;"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textSize="24sp"
