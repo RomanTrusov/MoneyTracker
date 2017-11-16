@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="itemText">
+
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
 </resources>

@@ -2,33 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:minHeight="65dp"
     android:layout_margin="5dp">
 
 
     <TextView
+        style="@style/itemText"
+        tools:text="Молоко"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorItemNameBG"
-        android:textColor="@color/colorText"
         android:textSize="20sp"
-        android:gravity="start"
         android:layout_weight="1"
-        android:padding="16dp"
         android:id="@+id/itemName"/>
 
     
     
     <TextView
+        style="@style/itemText"
+        tools:text="35 rub"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textSize="24sp"
-        android:gravity="center"
-        android:textColor="@color/colorText"
+        android:gravity="center_vertical"
         android:background="@color/colorItemPriceBG"
         android:layout_weight="0"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:id="@+id/itemPrice"/>
 </LinearLayout>
