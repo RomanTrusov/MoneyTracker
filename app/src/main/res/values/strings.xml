@@ -11,7 +11,7 @@
 
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>
-        <item>@string/tab_expenses</item>
+        <item>@string/tab_incomes</item>
         <item>@string/tab_balance</item>
     </string-array>
 </resources>

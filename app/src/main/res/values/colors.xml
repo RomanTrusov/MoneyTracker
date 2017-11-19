@@ -6,8 +6,8 @@
     <color name="colorText">#ffffff</color>
     <color name="colorBack">#84c0c5</color>
     <color name="colorZeroAlpha">#00ffffff</color>
-    <color name="colorItemNameBG">#ffc42e</color>
-    <color name="colorItemPriceBG">#cf9439</color>
+    <color name="colorItemNameBG">#FCC418</color>
+    <color name="colorItemPriceBG">#E6AE1E</color>
 
     <color name="colorInactiveButton">#bed4b9</color>
     <color name="colorActiveButton">#68ca4e</color>

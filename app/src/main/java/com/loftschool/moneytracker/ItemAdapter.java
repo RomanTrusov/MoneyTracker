@@ -1,12 +1,7 @@
 package com.loftschool.moneytracker;
 
 
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,8 +71,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
         void bind(Item item) { //метод для заполнения позиций текстом и ценой
             name.setText(String.valueOf(item.getName())); //Позиция заполняется текстом
             //newPrice = String.valueOf(item.getPrice()) + " \u20BD";
-            Spannable Price = new SpannableString("\u20BD " + String.valueOf(item.getPrice())); //переменная Price с форматированным текстом
-            Price.setSpan(new ForegroundColorSpan(Color.DKGRAY), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); //Задать форматирование текста
+            //Spannable Price = new SpannableString("\u20BD " + String.valueOf(item.getPrice())); //переменная Price с форматированным текстом
+            //Price.setSpan(new ForegroundColorSpan(Color.DKGRAY), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); //Задать форматирование текста
+            String Price = String.valueOf(item.getPrice() + " \u20BD");
             price.setText(Price); //Задать текст
         }
 }
