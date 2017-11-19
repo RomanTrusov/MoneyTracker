@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
+//Код пернесен их MainActivity
 public class AddActivity extends AppCompatActivity {
 
     public boolean nameEntered = false, moneyEntered = false; //Вводим две переменные для проверки наличия текста в каждом окне

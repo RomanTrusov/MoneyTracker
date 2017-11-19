@@ -43,20 +43,20 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
     }
 
     @Override //выполнение метода при создании списка
-    public ItemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemViewholder onCreateViewHolder(ViewGroup parent, int viewType) { //Когда создается вьюхолдер
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent,false);//сформировали список по Item.xml
         return new ItemViewholder(view); //Метод вернет новую позицию, заполненную по классу ItemViewholder
     }
 
     @Override
-    public void onBindViewHolder(ItemViewholder holder, int position) {
-       Item item = items.get(position);
-       holder.bind(item);
+    public void onBindViewHolder(ItemViewholder holder, int position) {  //Когда заполняется вьюхолдер
+       Item item = items.get(position); //Задать позицию айтема
+       holder.bind(item); //Метод bind
     }
 
 
     @Override //количество элементов списка в памяти
-    public int getItemCount() {
+    public int getItemCount() { //Количество позиций
 
         return items.size(); //Вернуть размер массива items
     }
