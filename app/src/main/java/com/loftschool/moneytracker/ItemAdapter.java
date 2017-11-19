@@ -18,10 +18,11 @@ import java.util.List;
 // Класс адаптер
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder> { //Наследуется от адаптера в бибилиотек RecyclerView
 
+
     private List<Item> items = new ArrayList<>(); // Новый массив с items-ами
 
     ItemAdapter() { //Конструктор сосписком айтемов
-        items.add(new Item("Молоко", 35));
+        items.add(new Item("Молоко", 85));
         items.add(new Item("Сыр", 115));
         items.add(new Item("Колбаса", 300));
         items.add(new Item("Молоко", 35));
@@ -72,12 +73,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
             price = itemView.findViewById(R.id.itemPrice); //Заполнили цену
         }
 
-        void bind(Item item){ //метод для заполнения позиций текстом и ценой
+        void bind(Item item) { //метод для заполнения позиций текстом и ценой
             name.setText(String.valueOf(item.getName())); //Позиция заполняется текстом
             //newPrice = String.valueOf(item.getPrice()) + " \u20BD";
-            Spannable text = new SpannableString("\u20BD " + String.valueOf(item.getPrice()));
-            text.setSpan(new ForegroundColorSpan(Color.DKGRAY), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            price.setText(text); //Ценой
+            Spannable Price = new SpannableString("\u20BD " + String.valueOf(item.getPrice())); //переменная Price с форматированным текстом
+            Price.setSpan(new ForegroundColorSpan(Color.DKGRAY), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); //Задать форматирование текста
+            price.setText(Price); //Задать текст
         }
 }
 
