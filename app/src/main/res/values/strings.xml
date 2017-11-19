@@ -2,5 +2,6 @@
     <string name="app_name">MoneyTracker</string>
     <string name="name_string">Название</string>
     <string name="money_string">0 &#8381;</string>
+    <string name="Ruble">&#8381;</string>
     <string name="add_to_base_string">Добавить запись в базу.</string>
 </resources>
