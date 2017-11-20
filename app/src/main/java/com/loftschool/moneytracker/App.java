@@ -33,20 +33,20 @@ public class App extends Application { //создали класс апп, ко�
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(); //новый объект interceptor - "выхватытватель"
 
         //интересный метод условий ниже////если версия дебажная то полный лог иначе никакой
-        interceptor.setLevel(BuildConfig.DEBUG ? BODY: NONE); //задали уровень логирования интресептора
+        interceptor.setLevel(BuildConfig.DEBUG ? BODY : NONE); //задали уровень логирования интресептора
 
         OkHttpClient client = new OkHttpClient.Builder() //настройка поведения клиента
                 .addInterceptor(interceptor) //задали интерсептор
                 .build(); //закончили настройку
 
         Retrofit retrofit = new Retrofit.Builder() //настройка ретрофит
-                .baseUrl("http://loftschoolandroid1117.getsandbox.com/") //с этого сайта берем инфу
+                .baseUrl("http://listforlessons.getsandbox.com/") //с этого сайта берем инфу
                 .addConverterFactory(GsonConverterFactory.create(gson)) //по такому конверетру (из библиотеки)
                 .client(client) //клиент (настроен выше)
                 .build(); //конец билдера
 
         api = retrofit.create(Api.class); //используем интерфейс для работы с инетом
-        }
+    }
 
     public Api getApi() {
         return api;

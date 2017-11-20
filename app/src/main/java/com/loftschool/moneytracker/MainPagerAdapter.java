@@ -11,7 +11,6 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
     private final static int PAGE_INCOMES = 1;
     private final static int PAGE_BALANCE = 2;
 
-
     private String[] titles; //Массив для перечня названий вкладок
 
     MainPagerAdapter(FragmentManager fm, Resources resources) { //конструктор для подключения fragmentManager с доступом в ресурсы

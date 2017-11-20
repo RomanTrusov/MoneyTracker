@@ -7,7 +7,6 @@ public class Item {
     public static final String TYPE_EXPENSE = "expence"; //первый тип для затрат
     public static final String TYPE_INCOME = "income"; //второй тип для прибыли
 
-
     public int id; //айди айтема
     public String name; //инициация строки с названием
     public int price; //инициация цены

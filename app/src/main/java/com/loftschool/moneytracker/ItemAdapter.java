@@ -13,7 +13,6 @@ import java.util.List;
 // Класс адаптер
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder> { //Наследуется от адаптера в бибилиотек RecyclerView
 
-
     private List<Item> items = new ArrayList<>(); // Новый массив с items-ами
 
     public void setItems(List<Item> items) { //Метод для присвоения айтемов извне
@@ -23,16 +22,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
 
     @Override //выполнение метода при создании списка
     public ItemViewholder onCreateViewHolder(ViewGroup parent, int viewType) { //Когда создается вьюхолдер
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent,false);//сформировали список по Item.xml
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);//сформировали список по Item.xml
         return new ItemViewholder(view); //Метод вернет новую позицию, заполненную по классу ItemViewholder
     }
 
     @Override
     public void onBindViewHolder(ItemViewholder holder, int position) {  //Когда заполняется вьюхолдер
-       Item item = items.get(position); //Задать позицию айтема
-       holder.bind(item); //Метод bind
+        Item item = items.get(position); //Задать позицию айтема
+        holder.bind(item); //Метод bind
     }
-
 
     @Override //количество элементов списка в памяти
     public int getItemCount() { //Количество позиций
@@ -60,6 +58,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
             String Price = String.valueOf(item.price + " \u20BD");
             price.setText(Price); //Задать текст
         }
-}
-
+    }
 }

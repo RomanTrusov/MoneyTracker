@@ -19,21 +19,18 @@ import com.loftschool.moneytracker.api.Api;
 import java.io.IOException;
 import java.util.List;
 
-import static com.loftschool.moneytracker.Item.TYPE_EXPENSE;
 import static com.loftschool.moneytracker.Item.TYPE_UNKNOWN;
 
 // Новый активити со списком трат (item-ов)
 public class ItemsFragment extends Fragment { //наследуется от Fragment, так как это фрагмент
 
-
     private static final int ITEMS_LOADER = 0; //айди лоадера
 
     private static final String KEY_TYPE = "TYPE"; // Ключ
-    private String type = TYPE_EXPENSE; //новая переменная с типом
+    private String type = TYPE_UNKNOWN; //новая переменная с типом
 
     private ItemAdapter adapter; // Обозначили переменную адаптер
     private Api api; //Обозначили ппеременную апи
-
 
     public static ItemsFragment createItemsFragment(String type) { //создадим метод для оптимизации кода (создание фрагмента)
         ItemsFragment fragment = new ItemsFragment(); //создали новый фрагмент
@@ -62,7 +59,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {//При создании вьюшки берем стиль xml
         return inflater.inflate(R.layout.fragment_items, container, false); //возвращаем вьюшку
-}
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) { //Когда вьюшка создана
@@ -113,10 +110,13 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
 
 
     }
+
     private void showError() { //метод для ошибки
-        Toast.makeText(getContext(), "Произошла ошибка. Айтемы пусты.",Toast.LENGTH_SHORT).show(); //всплывающее окно с ошибкой
+        Toast.makeText(getContext(), "Произошла ошибка. Айтемы пусты.", Toast.LENGTH_SHORT).show(); //всплывающее окно с ошибкой
     }
+
 }
+
 
 // //!!ВТОРОЙ МЕТОД, с утечками!!
 //    private void loadItems () { //метод загрузки айтемов
@@ -150,7 +150,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
 // КОНЕЦ ВТОРОГО МЕТОДА
 
 
-    //!!Закомментили старый способ!!
+//!!Закомментили старый способ!!
 //    private void loadItems() { //метод подгрузки айтмов
 //
 //        new LoadItemsTask(new Handler(Looper.getMainLooper()){

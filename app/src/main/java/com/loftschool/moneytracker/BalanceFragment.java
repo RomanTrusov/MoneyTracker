@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 public class BalanceFragment extends Fragment { //Наследутся от fragment
 
     private static final String TYPE_UNKNOWN = "unknown"; //в случае неизветсного типа
@@ -17,7 +16,6 @@ public class BalanceFragment extends Fragment { //Наследутся от frag
     private static final String KEY_TYPE = "TYPE"; //ключ
 
     private String type = "balance"; //тип равен текущему
-
 
     public static BalanceFragment createBalanceFragment(String type) { //создадим метод для оптимизации кода (создание фрагмента)
         BalanceFragment fragment = new BalanceFragment(); //создали новый фрагмент
@@ -32,7 +30,6 @@ public class BalanceFragment extends Fragment { //Наследутся от frag
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {//При создании вьюшки берем стиль xml
         return inflater.inflate(R.layout.fragment_balance, container, false); //возвращаем вьюшку
     }
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) { //когда аью создана
