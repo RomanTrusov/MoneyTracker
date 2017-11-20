@@ -14,7 +14,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
 
     private String[] titles; //Массив для перечня названий вкладок
 
-    public MainPagerAdapter(FragmentManager fm, Resources resources) { //конструктор для подключения fragmentManager с доступом в ресурсы
+    MainPagerAdapter(FragmentManager fm, Resources resources) { //конструктор для подключения fragmentManager с доступом в ресурсы
         super(fm);
 
         titles = resources.getStringArray(R.array.tabs_titles); //взять массив из xml
@@ -30,8 +30,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
             case PAGE_INCOMES: { //если позиция равна 1
                 return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_INCOME); //вернули фрагмент через метод
             }
-            case PAGE_BALANCE: //если позиция равна 3
-                return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_BALANCE);
+            case PAGE_BALANCE: //если позиция равна 2
+                return BalanceFragment.createBalanceFragment(BalanceFragment.TYPE_BALANCE);
             default: //все остальные случаи
                 return null;
 
