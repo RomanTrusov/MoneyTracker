@@ -15,6 +15,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
     private static final int TYPE_UNKNOWN = -1; //Неизвестная страница
     public static final int TYPE_EXPENSE = 0; //первый тип для затрат
     public static final int TYPE_INCOME = 1; //второй тип для прибыли
+    public static final int TYPE_BALANCE = 2;
 
     private static final String KEY_TYPE = "TYPE"; // Ключ
 
@@ -23,16 +24,17 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
     public static ItemsFragment createItemsFragment(int type) { //создадим метод для оптимизации кода (создание фрагмента)
         ItemsFragment fragment = new ItemsFragment(); //создали новый фрагмент
         Bundle bundle = new Bundle(); //создали новый бандл
-        bundle.putInt(ItemsFragment.KEY_TYPE, type); //присвоили ему интовой значене переменной тайп-экспенсив на ключ тайп
+        bundle.putInt(ItemsFragment.KEY_TYPE, type); //присвоили ему интовой значене переменной тайпа на ключ тайп
         fragment.setArguments(bundle); //задали аргумент фрагменту из бандла
         return fragment; //вернули фрагмент
     }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) { //При создании вьюшки берем стиль xml
-        View view = inflater.inflate(R.layout.fragment_items,container,false); //Применяем инфлэйтор
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {//При создании вьюшки берем стиль xml
+        View view = inflater.inflate(R.layout.fragment_items, container, false); //Применяем инфлэйтор
         return view; //возвращаем вьюшку
+
     }
 
     @Override

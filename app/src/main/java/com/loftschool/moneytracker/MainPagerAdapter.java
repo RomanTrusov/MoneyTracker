@@ -31,7 +31,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
                 return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_INCOME); //вернули фрагмент через метод
             }
             case PAGE_BALANCE: //если позиция равна 3
-                return null;
+                return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_BALANCE);
             default: //все остальные случаи
                 return null;
 
@@ -40,7 +40,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
 
     @Override
     public int getCount() { //количество позиций
-        return 2; //из массива
+        return 3; //из массива
     }
 
     @Override
