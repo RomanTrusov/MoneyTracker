@@ -16,6 +16,6 @@ public interface Api {
 
 
     @GET("items") //способ ГЕТ название метода items
-    Call<List<Item>> items(@Query("type") String type);
+    Call<List<Item>> items(@Query("type") String type); //запрос по <List<Item>> items иницирует обращене на сервер
 
 }

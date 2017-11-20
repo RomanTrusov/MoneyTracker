@@ -27,6 +27,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
 
 
     private static final int ITEMS_LOADER = 0; //айди лоадера
+
     private static final String KEY_TYPE = "TYPE"; // Ключ
     private String type = TYPE_EXPENSE; //новая переменная с типом
 
@@ -70,13 +71,13 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
         recycler.setLayoutManager(new LinearLayoutManager(getContext())); // Задать LayoutManager
         recycler.setAdapter(adapter); //Использовать созданный адаптер
 
-        loadItems();
+        loadItems(); //метод загрузки айтомов (ниже. они могут быть разными)
 
     }
 
     private void loadItems() { //метод загрузки айтемов
-        getLoaderManager().initLoader(ITEMS_LOADER, null, new LoaderManager.LoaderCallbacks<List<Item>>() {
-            @SuppressLint("StaticFieldLeak")
+        getLoaderManager().initLoader(ITEMS_LOADER, null, new LoaderManager.LoaderCallbacks<List<Item>>() { //используем лоадеры
+            @SuppressLint("StaticFieldLeak") //может быть утечка памяти
             @Override
             public Loader<List<Item>> onCreateLoader(int id, Bundle args) { //на момент создания лоадера
 
@@ -84,7 +85,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
                     @Override
                     public List<Item> loadInBackground() { //на другом потоке
                         try { //попробовать
-                            return api.items(type).execute().body(); //вернуть их
+                            return api.items(type).execute().body(); //вернуть айтемы
                         } catch (IOException e) { //в лучае ошибки
                             e.printStackTrace();
                             return null; //ничего не вернуть
@@ -96,7 +97,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
             @Override
             public void onLoadFinished(Loader<List<Item>> loader, List<Item> items) { //когда завершится загрузка
                 if (items == null) { //если айтемы пусты
-                    showError(); //ошибка
+                    showError(); //ошибка (наш метод ниже)
                 } else { //иначе
                     adapter.setItems(items); //заполнить адаптер
                 }
@@ -108,7 +109,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
 
             } //используем лоад менеджер
 
-        }).forceLoad();
+        }).forceLoad(); //запустить лоадер
 
 
     }

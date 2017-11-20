@@ -32,8 +32,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     testCompile 'junit:junit:4.12'
     implementation 'com.android.support:design:26.1.0'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //три библиотети для работы с интернетом
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0' //ретрофит
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0' //чтение инфы с сайта
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0' //для "выцепления инфы" во время предачи ее на/с сервера
 }
