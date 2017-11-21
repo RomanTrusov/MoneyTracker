@@ -36,7 +36,7 @@ public class BalanceFragment extends Fragment { //Наследутся от frag
         type = getArguments().getString(KEY_TYPE, TYPE_UNKNOWN);
 
         if (type.equals(TYPE_UNKNOWN)) { //Если тип равен неизвестному
-            throw new IllegalStateException("Unknown Fragment Type"); //Выдаст ошибку
+            throw new IllegalStateException(getString(R.string.unknownFragmentType)); //Выдаст ошибку
         }
     }
 }

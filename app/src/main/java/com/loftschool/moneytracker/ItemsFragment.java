@@ -47,7 +47,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
         type = getArguments().getString(KEY_TYPE, TYPE_UNKNOWN); //можно проанализировать это не создавая вьюху
 
         if (type.equals(TYPE_UNKNOWN)) { //Если тип равен неизвестному
-            throw new IllegalStateException("Unknown Fragment Type"); //Выдаст ошибку
+            throw new IllegalStateException(getString(R.string.unknownFragmentType)); //Выдаст ошибку
         }
 
         adapter = new ItemAdapter(); //создали адаптер здесь
@@ -111,8 +111,9 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
 
     }
 
+
     private void showError() { //метод для ошибки
-        Toast.makeText(getContext(), "Произошла ошибка. Айтемы пусты.", Toast.LENGTH_SHORT).show(); //всплывающее окно с ошибкой
+        Toast.makeText(getContext(), R.string.errorItemsIsEmpty, Toast.LENGTH_SHORT).show(); //всплывающее окно с ошибкой
     }
 
 }

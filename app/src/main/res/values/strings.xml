@@ -9,6 +9,9 @@
     <string name="tab_incomes">Доходы</string>
     <string name="tab_balance">Баланс</string>
     <string name="inDevelopmentMessage">Эта страница в разработке</string>
+    <string name="barName">Учет бюджета</string>
+    <string name="unknownFragmentType">Unknown Fragment Type</string>
+    <string name="errorItemsIsEmpty">Произошла ошибка. Айтемы пусты.</string>
 
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>

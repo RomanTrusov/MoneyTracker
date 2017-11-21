@@ -55,8 +55,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewholder
             //newPrice = String.valueOf(item.getPrice()) + " \u20BD";
             //Spannable Price = new SpannableString("\u20BD " + String.valueOf(item.getPrice())); //переменная Price с форматированным текстом
             //Price.setSpan(new ForegroundColorSpan(Color.DKGRAY), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); //Задать форматирование текста
-            String Price = String.valueOf(item.price + " \u20BD");
-            price.setText(Price); //Задать текст
+            String priceText = String.valueOf(item.price + " " + " \u20BD");
+            price.setText(priceText); //Задать текст
         }
     }
 }
