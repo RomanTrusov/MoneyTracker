@@ -26,7 +26,11 @@
         </activity>
 
 
-        <activity android:name=".AddActivity">
+        <activity android:name=".AddActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/NewItem"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysVisible">
 
         </activity>
     </application>

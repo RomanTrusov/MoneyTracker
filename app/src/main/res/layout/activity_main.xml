@@ -49,6 +49,7 @@
             app:tabTextColor="@color/unchosenTab"
             app:tabSelectedTextColor="@color/colorText"
             app:tabIndicatorColor="@color/underTabTintColor"
+
             />
     </android.support.design.widget.AppBarLayout>
 

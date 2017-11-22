@@ -1,7 +1,9 @@
 package com.loftschool.moneytracker;
 
+import java.io.Serializable;
+
 //Класс с информацией о каждом item
-public class Item {
+public class Item implements Serializable {
 
     public static final String TYPE_UNKNOWN = "unknown"; //Неизвестная страница
     public static final String TYPE_EXPENSE = "expence"; //первый тип для затрат

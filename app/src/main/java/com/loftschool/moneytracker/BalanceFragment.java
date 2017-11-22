@@ -24,7 +24,7 @@ public class BalanceFragment extends Fragment { //Наследутся от frag
         fragment.setArguments(bundle); //задали аргумент фрагменту из бандла
         return fragment; //вернули фрагмент
     }
-
+//TODO: почистить код здесь
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {//При создании вьюшки берем стиль xml

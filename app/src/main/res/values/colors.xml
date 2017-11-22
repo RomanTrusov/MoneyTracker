@@ -15,4 +15,5 @@
 
     <color name="colorInactiveButton">#bed4b9</color>
     <color name="colorActiveButton">#68ca4e</color>
+    <color name="fab_addColor">#15A599</color>
 </resources>

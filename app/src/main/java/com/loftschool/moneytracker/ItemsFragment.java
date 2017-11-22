@@ -1,8 +1,10 @@
 package com.loftschool.moneytracker;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -20,6 +22,7 @@ import com.loftschool.moneytracker.api.Api;
 import java.io.IOException;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
 import static com.loftschool.moneytracker.Item.TYPE_UNKNOWN;
 
 // Новый активити со списком трат (item-ов)
@@ -69,6 +72,16 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
         RecyclerView recycler = view.findViewById(R.id.recycler); //использовать RecyclerView по айди из xml файла
         recycler.setLayoutManager(new LinearLayoutManager(getContext())); // Задать LayoutManager
         recycler.setAdapter(adapter); //Использовать созданный адаптер
+
+        FloatingActionButton fab = view.findViewById(R.id.fab_add); //определили кнопку
+        fab.setOnClickListener(new View.OnClickListener() { //присвоили чекинг нажатия
+            @Override
+            public void onClick(View v) { //при нажатии
+                Intent intent = new Intent(getActivity(),AddActivity.class); //создаем намерение перейти на AddActivity
+                intent.putExtra(AddActivity.EXTRA_TYPE,type); //передае тип через ключ
+                startActivityForResult(intent,AddActivity.RC_ADD_ITEM); //перейти на активити с переменной
+            }
+        });
 
         loadItems(); //метод загрузки айтомов (ниже. они могут быть разными)
 
@@ -148,4 +161,12 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
         Toast.makeText(getContext(), R.string.errorItemsIsEmpty, Toast.LENGTH_SHORT).show(); //всплывающее окно с ошибкой
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) { //получаем результат при переходе на это активити
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==AddActivity.RC_ADD_ITEM && resultCode == RESULT_OK) { //если запрашиваемый код вавен имени добавленого итема и результат окей
+            Item item = (Item) data.getSerializableExtra(AddActivity.RESULT_ITEM); // добавить объект
+            Toast.makeText(getContext(),String.valueOf(item.price),Toast.LENGTH_LONG).show(); //отобразить на экране имя объекта
+        }
+    }
 }

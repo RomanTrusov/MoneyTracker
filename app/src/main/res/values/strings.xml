@@ -12,6 +12,7 @@
     <string name="barName">Учет бюджета</string>
     <string name="unknownFragmentType">Unknown Fragment Type</string>
     <string name="errorItemsIsEmpty">Произошла ошибка. Айтемы пусты.</string>
+    <string name="NewItem">Новая запись</string>
 
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>
