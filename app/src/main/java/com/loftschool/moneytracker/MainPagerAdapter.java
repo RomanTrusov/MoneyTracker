@@ -11,7 +11,6 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
     private final static int PAGE_INCOMES = 1;
     private final static int PAGE_BALANCE = 2;
 
-
     private String[] titles; //Массив для перечня названий вкладок
 
     MainPagerAdapter(FragmentManager fm, Resources resources) { //конструктор для подключения fragmentManager с доступом в ресурсы
@@ -25,10 +24,10 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
 
         switch (position) { //свитч на позицию
             case PAGE_EXPENSES: { //если позиция равна 0
-                return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_EXPENSE); //вернули фрагмент через метод
+                return ItemsFragment.createItemsFragment(Item.TYPE_EXPENSE); //вернули фрагмент через метод
             }
             case PAGE_INCOMES: { //если позиция равна 1
-                return ItemsFragment.createItemsFragment(ItemsFragment.TYPE_INCOME); //вернули фрагмент через метод
+                return ItemsFragment.createItemsFragment(Item.TYPE_INCOME); //вернули фрагмент через метод
             }
             case PAGE_BALANCE: //если позиция равна 2
                 return BalanceFragment.createBalanceFragment(BalanceFragment.TYPE_BALANCE);
