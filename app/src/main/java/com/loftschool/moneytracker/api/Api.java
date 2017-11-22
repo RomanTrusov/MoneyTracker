@@ -11,7 +11,6 @@ import retrofit2.http.Query;
 
 //Создали интерфейс
 
-
 public interface Api {
 
     @GET("items")
