@@ -166,7 +166,7 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==AddActivity.RC_ADD_ITEM && resultCode == RESULT_OK) { //если запрашиваемый код вавен имени добавленого итема и результат окей
             Item item = (Item) data.getSerializableExtra(AddActivity.RESULT_ITEM); // добавить объект
-            Toast.makeText(getContext(),String.valueOf(item.price),Toast.LENGTH_LONG).show(); //отобразить на экране имя объекта
+            Toast.makeText(getContext(),item.name + " стоило Вам  " + String.valueOf(item.price) + " руб.",Toast.LENGTH_LONG).show(); //отобразить на экране имя объекта
         }
     }
 }
