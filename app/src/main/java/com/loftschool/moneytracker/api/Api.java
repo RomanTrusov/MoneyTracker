@@ -6,6 +6,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 //Создали интерфейс
@@ -17,7 +18,7 @@ public interface Api {
         //способ ГЕТ название метода items
     Call<List<Item>> items(@Query("type") String type); //запрос по <List<Item>> items иницирует обращене на сервер
 
-    //@POST
-    //Call<AddResult> add(@Query("name") String name,@Query("price") String price,@Query("type") String type);
+    @POST
+    Call<AddResult> add(@Query("name") String name,@Query("price") int price,@Query("type") String type);
 
 }

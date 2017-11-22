@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.loftschool.moneytracker.api.AddResult;
 import com.loftschool.moneytracker.api.Api;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ import static com.loftschool.moneytracker.Item.TYPE_UNKNOWN;
 public class ItemsFragment extends Fragment { //наследуется от Fragment, так как это фрагмент
 
     private static final int ITEMS_LOADER = 0; //айди лоадера
+    private static final int ITEMS_ADD = 1; //айди добавления
 
     private static final String KEY_TYPE = "TYPE"; // Ключ
     private String type = TYPE_UNKNOWN; //новая переменная с типом
@@ -102,13 +104,43 @@ public class ItemsFragment extends Fragment { //наследуется от Frag
             }
 
             @Override
-            public void onLoaderReset(Loader<List<Item>> loader) { //когда перезапускаем лоадер
+            public void onLoaderReset(Loader<List<Item>> loader) { //удаление ссылок на сброшенные данные
 
             } //используем лоад менеджер
 
         }).forceLoad(); //запустить лоадер
 
 
+    }
+
+    private void addItem(final Item item) {
+        getLoaderManager().restartLoader(ITEMS_ADD, null, new LoaderManager.LoaderCallbacks<AddResult>() {
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            public Loader<AddResult> onCreateLoader(final int id, Bundle args) {
+                return new AsyncTaskLoader<AddResult>(getContext()) {
+                    @Override
+                    public AddResult loadInBackground() {
+                        try {
+                            return api.add(item.name, item.price, item.type).execute().body();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return null;
+                        }
+                    }
+                };
+            }
+
+            @Override
+            public void onLoadFinished(Loader<AddResult> loader, AddResult data) {
+
+            }
+
+            @Override
+            public void onLoaderReset(Loader<AddResult> loader) {
+
+            }
+        }) ;
     }
 
 
