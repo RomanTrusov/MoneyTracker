@@ -21,3 +21,4 @@ public interface Api {
     Call<AddResult> add(@Query("name") String name,@Query("price") int price,@Query("type") String type);
 
 }
+

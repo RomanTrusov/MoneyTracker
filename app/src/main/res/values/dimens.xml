@@ -6,4 +6,7 @@
     <dimen name="addButton_alpha">1</dimen>
     <dimen name="padding_name">16dp</dimen>
 
+    <!--TODO: занести размерности в XML-->
+
 </resources>
+
