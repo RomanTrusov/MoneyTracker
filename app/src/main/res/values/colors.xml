@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#95c9b8</color>
+    <color name="colorPrimaryDark">#739e90</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorText">#ffffff</color>
     <color name="colorBack">#84c0c5</color>
     <color name="colorZeroAlpha">#00ffffff</color>
-    <color name="colorItemNameBG">#ffc42e</color>
-    <color name="colorItemPriceBG">#cf9439</color>
+    <color name="colorItemNameBG">#FCC418</color>
+    <color name="colorItemPriceBG">#E6AE1E</color>
+
+    <color name="underTabTintColor">#FFFF8E</color>
+
+    <color name="unchosenTab">#a6ffffff</color>
 
     <color name="colorInactiveButton">#bed4b9</color>
     <color name="colorActiveButton">#68ca4e</color>
