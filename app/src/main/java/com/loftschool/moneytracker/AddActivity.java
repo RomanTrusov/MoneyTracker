@@ -22,13 +22,14 @@ public class AddActivity extends AppCompatActivity {
     public static final int RC_ADD_ITEM = 99; //
     private String type; //определим тип прежде чем с ним работать
 
+
     protected void activeButton(ImageButton add) { //Метод для определения активности кнопки
         add.setEnabled(nameEntered && moneyEntered); //Задать активность кнопки (1\0)
         if (nameEntered & moneyEntered) {
-            add.setBackgroundColor(getResources().getColor(R.color.colorActiveButton));
+            add.setAlpha(1.0f);
         } //Яркая если активна
         else {
-            add.setBackgroundColor(getResources().getColor(R.color.colorInactiveButton));
+            add.setAlpha(0.5f);
         } //Тусклая если не активна
     }
 

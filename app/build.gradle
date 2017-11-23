@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.loftschool.moneytracker"
-        minSdkVersion 21
+        minSdkVersion 22
         //noinspection OldTargetApi
         targetSdkVersion 26
         versionCode 1

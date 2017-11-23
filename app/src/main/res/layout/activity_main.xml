@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_pattern"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.loftschool.moneytracker.MainActivity">
-
+    tools:context="com.loftschool.moneytracker.MainActivity"
+    >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -36,10 +36,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_more_vert_white_24dp"
                 android:background="@color/colorZeroAlpha"/>
-
         </LinearLayout>
-
-
 
 
         <android.support.design.widget.TabLayout
@@ -48,17 +45,15 @@
             android:layout_height="wrap_content"
             app:tabTextColor="@color/unchosenTab"
             app:tabSelectedTextColor="@color/colorText"
-            app:tabIndicatorColor="@color/underTabTintColor"
+            app:tabIndicatorColor="@color/underTabTintColor"/>
 
-            />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
 
