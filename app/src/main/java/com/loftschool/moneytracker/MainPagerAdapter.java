@@ -30,7 +30,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter { //наследуе�
                 return ItemsFragment.createItemsFragment(Item.TYPE_INCOME); //вернули фрагмент через метод
             }
             case PAGE_BALANCE: //если позиция равна 2
-                return BalanceFragment.createBalanceFragment(BalanceFragment.TYPE_BALANCE);
+                return new BalanceFragment(); //создать пустой баланс фрагмент
             default: //все остальные случаи
                 return null;
 
